@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8">
+    <id>NCrunchXunit.Fody</id>
+    <version>$version$</version>
+    <title>NCrunchXunit.Fody</title>
+    <authors>Phil Scott</authors>
+    <owners>Phil Scott</owners>
+    <developmentDependency>true</developmentDependency>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://github.com/enkafan/NCrunchXunit.Fody</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Fody add-in to try and force NCrunch to follow xUnit parallelization strategies.</description>
+    <summary />
+    <tags>Fody, NCrunch, xUnit</tags>
+    <dependencies>
+      <dependency id="Fody" version="1.29.4"/>
+      <dependency id="NCrunch.Framework" version="2.27.0.3"/>
+      <dependency id="xunit" version="2.1.0" />
+    </dependencies>
+  </metadata>
+</package>
