@@ -11,6 +11,9 @@
 *.sln.docstates
 *.pidb
 
+# Build related
+tools/
+
 *.ncrunchsolution
 
 # Build results
