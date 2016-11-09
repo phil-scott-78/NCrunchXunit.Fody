@@ -58,7 +58,7 @@ Task("test")
     .IsDependentOn("build")
     .Does(() => 
 {
-    XUnit2("./FodyNCrunchXunit/Tests/bin/Debug/Tests.dll",
+    XUnit2("./Tests/bin/" + configuration + "/Tests.dll",
         new XUnit2Settings {
             Parallelism = ParallelismOption.All,
             XmlReport = true,
@@ -68,7 +68,7 @@ Task("test")
     if(AppVeyor.IsRunningOnAppVeyor)
     {
         Information("Uploading test results");
-        AppVeyor.UploadTestResults("./build/Tests.xml", AppVeyorTestResultsType.XUnit);
+        AppVeyor.UploadTestResults("./build/Tests.dll.xml", AppVeyorTestResultsType.XUnit);
     }
 });
 

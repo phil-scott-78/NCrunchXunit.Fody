@@ -9,6 +9,7 @@ public class ModuleWeaver
     // Will log an informational message to MSBuild
     public Action<string> LogInfo { get; set; }
     public Action<string> LogWarning { get; set; }
+    public Action<string> LogDebug { get; set; }
 
     // An instance of Mono.Cecil.ModuleDefinition for processing
     public ModuleDefinition ModuleDefinition { get; set; }
@@ -19,6 +20,7 @@ public class ModuleWeaver
     {
         LogInfo = s => { };
         LogWarning = s => { };
+        LogDebug = s => { };
     }
 
     public void Execute()
@@ -41,11 +43,14 @@ public class ModuleWeaver
         var potentialUnitTestTypes = ModuleDefinition.Types.Where(i => i.IsPublic && i.IsAbstract == false);
         foreach (var type in potentialUnitTestTypes)
         {
-            LogInfo(type.Name);
             // let's not mess with anything that already has an NCrunch namespace attribute on it
             if (type.CustomAttributes.Any(c => c.AttributeType.Namespace.StartsWith("NCrunch.Framework")))
+            {
+                LogDebug($"Skipping rewriting {type.Name} due to existing NCrunch attribute");
                 continue;
+            }
 
+            LogDebug($"Rewriting {type.Name}");
             var usesArg = type.FullName;
             var collectionAttribute = type.CustomAttributes.FirstOrDefault(c => c.AttributeType.FullName.Equals("Xunit.CollectionAttribute"));
             if (collectionAttribute != null)

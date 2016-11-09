@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies>
+  <assembly name="P:\projects\open-source\FodyNCrunchXunit\Tests\bin\Release\Tests.DLL" environment="64-bit .NET 4.0.30319.42000 [collection-per-class, parallel (16 threads)]" test-framework="xUnit.net 2.1.0.3179" run-date="2016-11-09" run-time="15:04:50" config-file="P:\projects\open-source\FodyNCrunchXunit\tools\xunit.runner.console\tools\xunit.console.exe.Config" total="2" passed="2" failed="0" skipped="0" time="0.435" errors="0">
+    <errors />
+    <collection total="2" passed="2" failed="0" skipped="0" name="Test collection for Tests.WeaverTests" time="0.073">
+      <test name="Tests.WeaverTests.Classes_with_collection_are_marked_as_exclusive_to_the_collection" type="Tests.WeaverTests" method="Classes_with_collection_are_marked_as_exclusive_to_the_collection" time="0.0720266" result="Pass" />
+      <test name="Tests.WeaverTests.Classes_with_facts_are_marked_as_exclusive_to_themself" type="Tests.WeaverTests" method="Classes_with_facts_are_marked_as_exclusive_to_themself" time="0.00091" result="Pass" />
+    </collection>
+  </assembly>
+</assemblies>
